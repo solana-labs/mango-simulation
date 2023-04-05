@@ -3,7 +3,7 @@ use {
     mango_simulation::{
         cli,
         confirmation_strategies::confirmations_by_blocks,
-        crank,
+        crank::{self, KeeperConfig},
         helpers::{
             get_latest_blockhash, get_mango_market_perps_cache, start_blockhash_polling_service,
             to_sdk_pk,
@@ -15,7 +15,6 @@ use {
         states::PerpMarketCache,
         stats::MangoSimulationStats,
         tpu_manager::TpuManager,
-        websocket_source::KeeperConfig,
     },
     serde_json,
     solana_client::{nonblocking::rpc_client::RpcClient as NbRpcClient, rpc_client::RpcClient},
